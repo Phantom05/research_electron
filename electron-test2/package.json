@@ -1,0 +1,83 @@
+{
+  "name": "electron-test2",
+  "version": "0.1.0",
+  "private": true,
+  "main": "electron-starter.js",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "asar": "^2.0.3",
+    "axios": "^0.19.1",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
+    "ejs": "^3.0.1",
+    "electron-packager": "^14.1.1",
+    "morgan": "^1.9.1",
+    "net": "^1.0.2",
+    "nodemon": "^2.0.2",
+    "open": "^7.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-scripts": "3.3.0",
+    "styled-components": "^4.4.1",
+    "util": "^0.12.1"
+  },
+  "build": {
+    "asar": true,
+    "productName": "DOF-Launcher-installer",
+    "appId": "dof.test.app",
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ]
+    }
+  },
+  "scripts": {
+    "start": "cross-env NODE_PATH=src react-scripts start",
+    "build": "cross-env NODE_PATH=src react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-build": "electron-packager . DOF-Launcher",
+    "dev": "nf start -p 3000",
+    "test-server": " nodemon ./test_server/bin/www",
+    "setup": "node installer.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "homepage": ".",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "license": "CC0-1.0",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "foreman": "^3.0.1",
+    "electron": "^7.1.8"
+  }
+}
